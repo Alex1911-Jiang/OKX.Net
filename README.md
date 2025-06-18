@@ -9,6 +9,7 @@ OKX.Net is strongly typed client library for accessing the [OKX REST and Websock
 * Automatic websocket (re)connection management 
 * Client side rate limiting 
 * Client side order book implementation
+* Support for managing different accounts
 * Extensive logging
 * Support for different environments
 * Easy integration with other exchange client based on the CryptoExchange.Net base library
@@ -79,12 +80,12 @@ var client = new OKXRestClient(options =>
 ```
 
 
-For information on the clients, dependency injection, response processing and more see the [OKX.Net documentation](https://jkorf.github.io/OKX.Net), [CryptoExchange.Net documentation](https://jkorf.github.io/CryptoExchange.Net), or have a look at the examples [here](https://github.com/JKorf/OKX.Net/tree/main/Examples) or [here](https://github.com/JKorf/CryptoExchange.Net/tree/master/Examples).
+For information on the clients, dependency injection, response processing and more see the [OKX.Net documentation](https://cryptoexchange.jkorf.dev?library=OKX.Net) or have a look at the examples [here](https://github.com/JKorf/OKX.Net/tree/main/Examples) or [here](https://github.com/JKorf/CryptoExchange.Net/tree/master/Examples).
 
 ## CryptoExchange.Net
 OKX.Net is based on the [CryptoExchange.Net](https://github.com/JKorf/CryptoExchange.Net) base library. Other exchange API implementations based on the CryptoExchange.Net base library are available and follow the same logic.
 
-CryptoExchange.Net also allows for [easy access to different exchange API's](https://jkorf.github.io/CryptoExchange.Net#idocs_shared).
+CryptoExchange.Net also allows for [easy access to different exchange API's](https://cryptoexchange.jkorf.dev/client-libs/shared).
 
 |Exchange|Repository|Nuget|
 |--|--|--|
@@ -106,6 +107,7 @@ CryptoExchange.Net also allows for [easy access to different exchange API's](htt
 |Kraken|[JKorf/Kraken.Net](https://github.com/JKorf/Kraken.Net)|[![Nuget version](https://img.shields.io/nuget/v/KrakenExchange.net.svg?style=flat-square)](https://www.nuget.org/packages/KrakenExchange.Net)|
 |Kucoin|[JKorf/Kucoin.Net](https://github.com/JKorf/Kucoin.Net)|[![Nuget version](https://img.shields.io/nuget/v/Kucoin.net.svg?style=flat-square)](https://www.nuget.org/packages/Kucoin.Net)|
 |Mexc|[JKorf/Mexc.Net](https://github.com/JKorf/Mexc.Net)|[![Nuget version](https://img.shields.io/nuget/v/JK.Mexc.net.svg?style=flat-square)](https://www.nuget.org/packages/JK.Mexc.Net)|
+|Toobit|[JKorf/Toobit.Net](https://github.com/JKorf/Toobit.Net)|[![Nuget version](https://img.shields.io/nuget/v/Toobit.net.svg?style=flat-square)](https://www.nuget.org/packages/Toobit.Net)|
 |WhiteBit|[JKorf/WhiteBit.Net](https://github.com/JKorf/WhiteBit.Net)|[![Nuget version](https://img.shields.io/nuget/v/WhiteBit.net.svg?style=flat-square)](https://www.nuget.org/packages/WhiteBit.Net)|
 |XT|[JKorf/XT.Net](https://github.com/JKorf/XT.Net)|[![Nuget version](https://img.shields.io/nuget/v/XT.net.svg?style=flat-square)](https://www.nuget.org/packages/XT.Net)|
 
@@ -169,6 +171,19 @@ Make a one time donation in a crypto currency of your choice. If you prefer to d
 Alternatively, sponsor me on Github using [Github Sponsors](https://github.com/sponsors/JKorf). 
 
 ## Release notes
+* Version 3.1.1 - 13 Jun 2025
+    * Fixed deserialization issue client.UnifiedApi.Account.GetAccountBalanceAsync endpoint
+
+* Version 3.1.0 - 02 Jun 2025
+    * Updated CryptoExchange.Net to version 9.1.0, see https://github.com/JKorf/CryptoExchange.Net/releases/
+    * Added (I)OKXUserClientProvider allowing for easy client management when handling multiple users
+    * Added CollateralRestricted and AvailableEquity properties to OKXAccountBalance model
+    * Added ContinuousTradingSwitchTime and OpenType properties to OKXInstrument model
+    * Added CollateralRestricted to OKXDiscountInfo model
+    * Updated symbol parameter to be optional for restClient.UnifiedApi.ExchangeData.GetFundingRatesAsync
+    * Fixed typo in AccountBillSubType.AutoOffset enum value
+    * Fixed framework check for setting IsAotCompatible project flag
+
 * Version 3.0.0 - 13 May 2025
     * Updated CryptoExchange.Net to version 9.0.0, see https://github.com/JKorf/CryptoExchange.Net/releases/
     * Added support for Native AOT compilation

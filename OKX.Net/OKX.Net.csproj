@@ -7,9 +7,9 @@
   <PropertyGroup>
     <PackageId>JK.OKX.Net</PackageId>
     <Authors>JKorf</Authors>
-    <PackageVersion>3.0.0</PackageVersion>
-    <AssemblyVersion>3.0.0</AssemblyVersion>
-    <FileVersion>3.0.0</FileVersion>
+    <PackageVersion>3.1.1</PackageVersion>
+    <AssemblyVersion>3.1.1</AssemblyVersion>
+    <FileVersion>3.1.1</FileVersion>
     <Description>JK.OKX.Net is client library for accessing the OKX REST and Websocket API. All data is mapped to readable models and enum values. Additional features include automatic websocket (re)connection management, client side rate limiting, an implementation for maintaining a client side order book, easy integration with other exchange client libraries and more.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>OKX;OKX.Net;OKX.com;OKX Client;OKX API;CryptoCurrency;CryptoCurrency Exchange</PackageTags>
@@ -18,6 +18,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
     <PackageReleaseNotes>https://github.com/JKorf/Okx.Net?tab=readme-ov-file#release-notes</PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Label="AOT" Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net7.0'))">
@@ -48,7 +49,7 @@
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CryptoExchange.Net" Version="9.0.0" />
+    <PackageReference Include="CryptoExchange.Net" Version="9.1.0" />
     <PackageReference Include="ConfigureAwaitChecker.Analyzer" Version="5.0.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
